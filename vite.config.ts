@@ -9,5 +9,7 @@ export default defineConfig({
   // allow the Mac's Bonjour name (e.g. Enriques-MacBook-Pro.local) so the iPad can reach it on the LAN
   server: { allowedHosts: ['.local'] },
   preview: { allowedHosts: ['.local'] },
+  // older iPhones/iPads: transpile modern syntax down to what Safari 13 understands
+  build: { target: ['es2019', 'safari13'] },
   test: { environment: 'node' },
 } as any);

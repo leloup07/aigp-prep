@@ -13,6 +13,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // last resort: if the app script itself fails to load or parse, say so instead of a blank page
+      window.addEventListener('error', function (e) {
+        var r = document.getElementById('root');
+        if (r && !r.firstChild) r.innerHTML = '<p style="font:16px -apple-system,sans-serif;padding:20px">No se pudo iniciar la app en este navegador.<br><small>' +
+          String(e.message).replace(/</g, '&lt;') + '<br>' + navigator.userAgent + '</small></p>';
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -131,3 +131,14 @@ describe('exam clock (two halves)', () => {
     expect(navigable(rt, 100, 50)).toEqual([0, 99]);
   });
 });
+
+describe('old Safari compatibility', () => {
+  it('RegExp shim neutralises lookbehind but keeps everything else', async () => {
+    const { makeRegExpShim } = await import('../src/compat');
+    const R = makeRegExpShim(RegExp);
+    expect(new R('(?<=^|\\s)x', 'gu').test(' x')).toBe(false);
+    expect(new R('(?<name>a)b').exec('ab')?.groups?.name).toBe('a');
+    expect(new R('a+', 'g') instanceof RegExp).toBe(true);
+    expect(Object.hasOwn({ a: 1 }, 'a')).toBe(true);
+  });
+});
