@@ -31,3 +31,14 @@ npm run ipad
 Con el Mac y el iPad en la misma wifi, abre en Safari del iPad `http://Enriques-MacBook-Pro.local:4173`
 y añádela a la pantalla de inicio (Compartir → Añadir a pantalla de inicio). Los datos del iPad son independientes
 de los del Mac: pásalos con Ajustes → Exportar / Importar JSON.
+
+## Versión publicada (GitHub Pages)
+
+https://leloup07.github.io/aigp-prep/ — **pública**: cualquiera con el enlace puede leer el material (no aparece en buscadores: `noindex` + `robots.txt`).
+Tu progreso no se publica; se guarda en el navegador de cada dispositivo.
+
+Para publicar cambios (por ejemplo, tras editar los `.md`):
+
+```bash
+npm run deploy
+```
