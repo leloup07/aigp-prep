@@ -1,0 +1,39 @@
+{
+  "name": "aigp-prep",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "import": "tsx scripts/import.ts",
+    "predev": "npm run import",
+    "dev": "vite",
+    "prebuild": "npm run import",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "ipad": "npm run build && vite preview --host --port 4173 --strictPort",
+    "deploy": "sh scripts/deploy.sh"
+  },
+  "dependencies": {
+    "idb": "^8.0.4",
+    "minisearch": "^7.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "fake-indexeddb": "^6.2.6",
+    "tsx": "^4.23.15",
+    "typescript": "5.6",
+    "vite": "^6.4.4",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^3.2.7",
+    "zod": "^3.25.76"
+  }
+}
